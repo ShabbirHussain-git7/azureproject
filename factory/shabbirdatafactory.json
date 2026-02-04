@@ -1,0 +1,9 @@
+{
+	"name": "shabbirdatafactory",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "d0eb06e8-69c3-4dbb-88dd-4742f3af2c03",
+		"tenantId": "091dfdca-d695-4e02-9b55-29e280c9cec4"
+	}
+}

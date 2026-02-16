@@ -1,0 +1,26 @@
+[
+{
+  "schema" :"dbo"
+  "table":"DimUser"
+  "file":"updated_at"
+  "from_date":""
+},
+{
+  "schema" :"dbo"
+  "table":"DimTrack"
+  "file":"updated_at"
+  "from_date":""
+},
+{
+  "schema" :"dbo"
+  "table":"DimDate"
+  "file":"updated_at"
+  "from_date":""
+},
+{
+  "schema" :"dbo"
+  "table":"DimArtist"
+  "file":"updated_at"
+  "from_date":""
+},
+]

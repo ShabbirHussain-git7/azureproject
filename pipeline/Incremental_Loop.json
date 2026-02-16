@@ -8,6 +8,11 @@
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.loop_input",
+						"type": "Expression"
+					},
+					"isSequential": true,
 					"activities": [
 						{
 							"name": "CopyDataFromAzureSQL",
@@ -180,11 +185,11 @@
 												"parameters": {
 													"container": "bronze",
 													"folder": {
-														"value": "@pipeline().parameters.table",
+														"value": "@item().table",
 														"type": "Expression"
 													},
 													"file": {
-														"value": "@concat(pipeline().parameters.table,'_',variables('current'))",
+														"value": "@concat(item().table,'_',variables('current'))",
 														"type": "Expression"
 													}
 												}
@@ -271,7 +276,10 @@
 														"value": "@{item().table}_cdc",
 														"type": "Expression"
 													},
-													"file": "cdc.json"
+													"file": {
+														"value": "@{item().table}_cdc",
+														"type": "Expression"
+													}
 												}
 											}
 										]
@@ -314,7 +322,39 @@
 		],
 		"parameters": {
 			"loop_input": {
-				"type": "string"
+				"type": "array",
+				"defaultValue": [
+					{
+						"schema": "dbo",
+						"table": "DimUser",
+						"file": "updated_at",
+						"from_date": ""
+					},
+					{
+						"schema": "dbo",
+						"table": "DimTrack",
+						"file": "updated_at",
+						"from_date": ""
+					},
+					{
+						"schema": "dbo",
+						"table": "DimDate",
+						"file": "updated_at",
+						"from_date": ""
+					},
+					{
+						"schema": "dbo",
+						"table": "DimArtist",
+						"file": "updated_at",
+						"from_date": ""
+					},
+					{
+						"schema": "dbo",
+						"table": "FactStream",
+						"file": "updated_at",
+						"from_date": ""
+					}
+				]
 			}
 		},
 		"variables": {

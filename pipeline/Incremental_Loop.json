@@ -305,7 +305,7 @@
 												{
 													"type": "Query",
 													"text": {
-														"value": "select Max(@{item().cdc_col}) as cdc from @{item().schema}@{item().table}",
+														"value": "select Max(@{item().file}) as cdc \nfrom @{item().schema}.@{item().table}\n",
 														"type": "Expression"
 													}
 												}
@@ -327,31 +327,31 @@
 					{
 						"schema": "dbo",
 						"table": "DimUser",
-						"file": "updated_at",
+						"cdc_col": "updated_at",
 						"from_date": ""
 					},
 					{
 						"schema": "dbo",
 						"table": "DimTrack",
-						"file": "updated_at",
+						"cdc_col": "updated_at",
 						"from_date": ""
 					},
 					{
 						"schema": "dbo",
 						"table": "DimDate",
-						"file": "updated_at",
+						"cdc_col": "date",
 						"from_date": ""
 					},
 					{
 						"schema": "dbo",
 						"table": "DimArtist",
-						"file": "updated_at",
+						"cdc_col": "updated_at",
 						"from_date": ""
 					},
 					{
 						"schema": "dbo",
 						"table": "FactStream",
-						"file": "updated_at",
+						"cdc_col": "stream_timestamp",
 						"from_date": ""
 					}
 				]

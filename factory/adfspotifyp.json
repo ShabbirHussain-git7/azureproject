@@ -1,0 +1,9 @@
+{
+	"name": "adfspotifyp",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "3dd24b6e-0d2a-41ea-9aba-b28e4929715e",
+		"tenantId": "091dfdca-d695-4e02-9b55-29e280c9cec4"
+	}
+}

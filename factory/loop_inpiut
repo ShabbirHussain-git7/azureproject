@@ -23,4 +23,10 @@
   "file":"updated_at"
   "from_date":""
 },
+{
+  "schema" :"dbo"
+  "table":"FactStream"
+  "file":"updated_at"
+  "from_date":""
+},
 ]
